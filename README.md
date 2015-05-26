@@ -58,3 +58,10 @@ Create an IAM role with the following policy:
 
 At this point, if you upload a file to your source bucket, the file 
 should be converted to AES256 encryption if it isn't already encrypted.
+
+## Notes
+
+Lambda will invoke this function twice for each file uploaded:
+
+1. Once for the true upload, and
+2. A second time because we've modified the file.
