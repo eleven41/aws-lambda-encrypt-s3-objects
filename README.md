@@ -16,6 +16,7 @@ Create an IAM role with the following policy:
             "Sid": "Stmt1430872797000",
             "Effect": "Allow",
             "Action": [
+                "s3:GetBucketTagging",
                 "s3:GetObject",
                 "s3:PutObject"
             ],
@@ -55,9 +56,18 @@ Create an IAM role with the following policy:
  * Event Source Type: S3
  * Bucket: your source bucket
  * Event Type: Object Created
+4. Set your Lambda function to execute using the IAM role you created above.
 
 At this point, if you upload a file to your source bucket, the file 
 should be converted to AES256 encryption if it isn't already encrypted.
+
+### Additional Options
+
+Configuration is performed by setting tags on the bucket.
+
+Tag Name | Notes
+---|---
+SetReducedRedundancy | Set to 'Yes' to use reduced redundancy for the object.
 
 ## Notes
 
