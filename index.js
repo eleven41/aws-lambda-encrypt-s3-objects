@@ -25,7 +25,7 @@ exports.handler = function (event, context) {
         
         // The bucket and key are part of the event data
         var bucket = record.s3.bucket.name;
-        var key = unescape(record.s3.object.key);
+        var key = decodeURIComponent(record.s3.object.key.replace(/\+/g, " "));
         
         console.log('Processing ' + bucket + '/' + key);
         
