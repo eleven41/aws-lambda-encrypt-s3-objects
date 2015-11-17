@@ -48,10 +48,28 @@ Create an IAM role with the following policy:
 }
 ```
 
+### Building the Lambda Package
+
+1. Clone this repo
+
+```
+git clone git@github.com:eleven41/aws-lambda-encrypt-s3-objects.git
+cd aws-lambda-encrypt-s3-objects
+```
+
+2. Install requirements
+
+```
+npm install async
+npm install aws-sdk
+```
+
+3. Zip up the folder using your favourite zipping utility
+
 ### Lambda Function
 
 1. Create a new Lambda function.
-2. Upload the file index.js as the code for your Lambda function.
+2. Upload the ZIP package for the lambda function using `index.handler` as the handler.
 3. Add an event source to your Lambda function:
  * Event Source Type: S3
  * Bucket: your source bucket
