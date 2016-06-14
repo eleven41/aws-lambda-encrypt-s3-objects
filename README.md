@@ -18,7 +18,8 @@ Create an IAM role with the following policy:
             "Action": [
                 "s3:GetBucketTagging",
                 "s3:GetObject",
-                "s3:PutObject"
+                "s3:PutObject",
+                "s3:ListBucket"
             ],
             "Resource": [
                 "*"
